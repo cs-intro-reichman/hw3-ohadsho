@@ -19,7 +19,7 @@ public class Algebra {
    		//System.out.println(mod(-24,-25));   // 25 % 7
 		//System.out.println(-24%-25);
    		//System.out.println(mod(120,6));  // 120 % 6    
-   		//System.out.println(sqrt(5));
+   		System.out.println(sqrt(1));
 		/*System.out.println(sqrt(263169));
    		System.out.println(sqrt(76123));*/
 		//System.out.println(2/7);
@@ -137,6 +137,9 @@ public class Algebra {
 	public static int sqrt(int x) {
 		if(x==0)
 		return 0;
+
+		if(x ==1)
+		return 1;
 	
 		for(int i=0; i<=x ; i++){
 			if(times( i,i) > x ){
