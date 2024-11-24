@@ -13,9 +13,10 @@ public class Anagram {
 		
 		
 		 //Tests the randomAnagram function.
-		//System.out.println("silent and " + randomAnagram("silent") + " are anagrams.");
+		System.out.println("silent and " + randomAnagram("gafdgafg") + " are anagrams.");
 		
 		// Performs a stress test of randomAnagram 
+		/* 
 		String str = "1234567";
 		Boolean pass = true;
 		//// 10 can be changed to much larger values, like 1000
@@ -26,18 +27,19 @@ public class Anagram {
 			if (!pass) break;
 		}
 		System.out.println(pass ? "test passed" : "test Failed");
-		
+		*/
 	}  
 	
 	
 
 	// Returns true if the two given strings are anagrams, false otherwise.
 	public static boolean isAnagram(String str1, String str2) {
+        str1 = preProcess(str1);
+        str2 = preProcess(str2);
+
+
 		if(str1.length() != str2.length())
 		return false;
-
-		if(str1.length() ==0)
-		return true;
 
 		for(int i=0 ; i< str1.length() ; i++){
 			for(int j=0 ; j< str2.length() ; j++){
@@ -73,6 +75,7 @@ public class Anagram {
 	// Returns a random anagram of the given string. The random anagram consists of the same
 	// characters as the given string, re-arranged in a random order. 
 	public static String randomAnagram(String str) {
+		str = preProcess(str);
 		String randomStr ="";
 		int length = str.length();
 		int random= 0;
@@ -82,9 +85,12 @@ public class Anagram {
 
 		for(int i=0 ; i<length ; i++){
 			random =(int) (Math.random() * (str.length()));
+			System.out.println(random);
 			randomStr = randomStr + str.charAt(random);
+		
 			str = str.replace(str.charAt(random), ' ');
 			str = str.replaceAll("\\s", "");
+		
 		}
 		return randomStr;
 	}
