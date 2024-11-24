@@ -49,7 +49,7 @@ public class LoanCalc {
 		while(endBalance(loan,rate,n,payment)>0){
 			payment = payment + epsilon;
 		}
-		return payment;
+		return (int)payment;
     }
     
     // Uses bisection search to compute an approximation of the periodical payment 
@@ -71,6 +71,6 @@ public class LoanCalc {
 				middle = (high+low)/2;
 			}
 		}
-		return middle;
+		return (int)middle;
     }
 }
