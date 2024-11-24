@@ -36,6 +36,9 @@ public class Anagram {
 		if(str1.length() != str2.length())
 		return false;
 
+		if(str1.length() ==0)
+		return true;
+
 		for(int i=0 ; i< str1.length() ; i++){
 			for(int j=0 ; j< str2.length() ; j++){
 				if(str1.charAt(i) == str2.charAt(j) ){
@@ -73,6 +76,9 @@ public class Anagram {
 		String randomStr ="";
 		int length = str.length();
 		int random= 0;
+
+		if(str.length() ==0)
+		return "";
 
 		for(int i=0 ; i<length ; i++){
 			random =(int) (Math.random() * (str.length()));
