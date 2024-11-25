@@ -15,7 +15,7 @@ public class LoanCalc {
 		System.out.println("Loan = " + loan + ", interest rate = " + rate + "%, periods = " + n);
 
 		//System.out.println(endBalance(loan,rate,n,10000));
-		System.out.println(bisectionSolver(loan, rate, n ,epsilon));
+		System.out.println(endBalance(loan, rate, n ,10000));
 		
 		 //Computes the periodical payment using brute force search
 		System.out.print("\nPeriodical payment, using brute force: ");
@@ -46,8 +46,10 @@ public class LoanCalc {
 	// Side effect: modifies the class variable iterationCounter.
     public static int bruteForceSolver(double loan, double rate, int n, double epsilon) {
 		double payment =0;
+		iterationCounter=0;
 		while(endBalance(loan,rate,n,payment)>0){
 			payment = payment + epsilon;
+			iterationCounter++;
 		}
 		return (int)payment;
     }
@@ -57,7 +59,7 @@ public class LoanCalc {
 	// Given: the sum of the loan, the periodical interest rate (as a percentage),
 	// the number of periods (n), and epsilon, the approximation's accuracy
 	// Side effect: modifies the class variable iterationCounter.
-    public static int bisectionSolver(double loan, double rate, int n, double epsilon) {  
+    public static int bisectionSolver(double loan, double rate, int n, double epsilon) {
 		double high=loan;
 		double low = 0;
 		double middle = (high + low)/2;
