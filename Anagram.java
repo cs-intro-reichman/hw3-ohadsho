@@ -13,7 +13,7 @@ public class Anagram {
 		
 		
 		 //Tests the randomAnagram function.
-		System.out.println("silent and " + randomAnagram("gafdgafg") + " are anagrams.");
+		System.out.println("silent and " + randomAnagram("lisent") + " are anagrams.");
 		
 		// Performs a stress test of randomAnagram 
 		
