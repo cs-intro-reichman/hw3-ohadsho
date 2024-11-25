@@ -3,20 +3,20 @@ public class Anagram {
 	public static void main(String args[]) {
 		
 		// Tests the isAnagram function.
-		//System.out.println(isAnagram("silent","listen"));  // true
-		//System.out.println(isAnagram("William Shakespeare","I am a weakish speller")); // true
-		//System.out.println(isAnagram("Madam Curie","Radium came")); // true
-		//System.out.println(isAnagram("Tom Marvolo Riddle","I am Lord Voldemort")); // true
+		System.out.println(isAnagram("silent","listen"));  // true
+		System.out.println(isAnagram("William Shakespeare","I am a weakish speller")); // true
+		System.out.println(isAnagram("Madam Curie","Radium came")); // true
+		System.out.println(isAnagram("Tom Marvolo Riddle","I am Lord Voldemort")); // true
 		
 		// Tests the preProcess function.
-		//System.out.println(preProcess("What? No way!!!"));
+		System.out.println(preProcess("What? No way!!!"));
 		
 		
 		 //Tests the randomAnagram function.
 		System.out.println("silent and " + randomAnagram("gafdgafg") + " are anagrams.");
 		
 		// Performs a stress test of randomAnagram 
-		/* 
+		
 		String str = "1234567";
 		Boolean pass = true;
 		//// 10 can be changed to much larger values, like 1000
@@ -27,7 +27,7 @@ public class Anagram {
 			if (!pass) break;
 		}
 		System.out.println(pass ? "test passed" : "test Failed");
-		*/
+		
 	}  
 	
 	
@@ -85,11 +85,12 @@ public class Anagram {
 
 		for(int i=0 ; i<length ; i++){
 			random =(int) (Math.random() * (str.length()));
-			System.out.println(random);
+
 			randomStr = randomStr + str.charAt(random);
 		
 			str = str.replace(str.charAt(random), ' ');
 			str = str.replaceAll("\\s", "");
+		
 		
 		}
 		return randomStr;
