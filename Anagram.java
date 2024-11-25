@@ -3,7 +3,7 @@ public class Anagram {
 	public static void main(String args[]) {
 		
 		// Tests the isAnagram function.
-		System.out.println(isAnagram("niiiii","niiini"));  // true
+		System.out.println(isAnagram("silent","listen"));  // true
 		System.out.println(isAnagram("William Shakespeare","I am a weakish speller")); // true
 		System.out.println(isAnagram("Madam Curie","Radium came")); // true
 	    System.out.println(isAnagram("Tom Marvolo Riddle","I am Lord Voldmeort")); // true
@@ -96,7 +96,6 @@ public class Anagram {
 		for(int i=0 ; i<length ; i++){
 			random =(int) (Math.random() * (str.length()));
 
-			System.out.println(str);
 			if(str != ""){
 			strTemp = str;
 			randomStr = randomStr + str.charAt(random);
