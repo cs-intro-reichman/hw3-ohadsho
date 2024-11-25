@@ -3,17 +3,17 @@ public class Anagram {
 	public static void main(String args[]) {
 		
 		// Tests the isAnagram function.
-		System.out.println(isAnagram("silent","listen"));  // true
+		System.out.println(isAnagram("Silent","ListeN"));  // true
 		System.out.println(isAnagram("William Shakespeare","I am a weakish speller")); // true
 		System.out.println(isAnagram("Madam Curie","Radium came")); // true
-		System.out.println(isAnagram("Tom Marvolo Riddle","I am Lord Voldemort")); // true
+		System.out.println(isAnagram("Tom Marvolo Riddle","I am Lord Voldmeort")); // true
 		
 		// Tests the preProcess function.
-		System.out.println(preProcess("What? No way!!!"));
+		System.out.println(preProcess("Hello World!"));
 		
 		
 		 //Tests the randomAnagram function.
-		System.out.println("silent and " + randomAnagram("lisent") + " are anagrams.");
+		System.out.println("silent and " + randomAnagram("jstyzjsrtj") + " are anagrams.");
 		
 		// Performs a stress test of randomAnagram 
 		String str = "1234567";
@@ -21,7 +21,6 @@ public class Anagram {
 		//// 10 can be changed to much larger values, like 1000
 		for (int i = 0; i < 10; i++) {
 			String randomAnagram = randomAnagram(str);
-			System.out.println(randomAnagram);
 			pass = pass && isAnagram(str, randomAnagram);
 			if (!pass) break;
 		}
