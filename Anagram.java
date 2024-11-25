@@ -16,7 +16,6 @@ public class Anagram {
 		System.out.println("silent and " + randomAnagram("lisent") + " are anagrams.");
 		
 		// Performs a stress test of randomAnagram 
-		
 		String str = "1234567";
 		Boolean pass = true;
 		//// 10 can be changed to much larger values, like 1000
@@ -35,8 +34,9 @@ public class Anagram {
 	// Returns true if the two given strings are anagrams, false otherwise.
 	public static boolean isAnagram(String str1, String str2) {
         str1 = preProcess(str1);
+		str1= str1.replaceAll("\\s", "");
         str2 = preProcess(str2);
-
+		str2= str2.replaceAll("\\s", "");
 
 		if(str1.length() != str2.length())
 		return false;
@@ -68,7 +68,6 @@ public class Anagram {
 				str = str.replace(str.charAt(i), ' ');
 			}
 		}
-		str = str.replaceAll("\\s", "");
 		return str;
 	} 
 	   
@@ -86,11 +85,11 @@ public class Anagram {
 		for(int i=0 ; i<length ; i++){
 			random =(int) (Math.random() * (str.length()));
 
+			if(str != ""){
 			randomStr = randomStr + str.charAt(random);
-		
 			str = str.replace(str.charAt(random), ' ');
 			str = str.replaceAll("\\s", "");
-		
+			}
 		
 		}
 		return randomStr;
