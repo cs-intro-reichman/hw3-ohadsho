@@ -13,7 +13,7 @@ public class Anagram {
 		
 		
 		 //Tests the randomAnagram function.
-		System.out.println("silent and " + randomAnagram("jstyzjsrtj") + " are anagrams.");
+		System.out.println("silent and " + randomAnagram("gfsnhfgsnsfgn") + " are anagrams.");
 		
 		// Performs a stress test of randomAnagram 
 		String str = "1234567";
@@ -26,9 +26,13 @@ public class Anagram {
 		}
 		System.out.println(pass ? "test passed" : "test Failed");
 		
-	}  
-	
-	
+	 
+
+	//String str = "hello" ;
+//	String strTemp = str;
+	//str = strTemp.substring(0,1) + strTemp.substring(1 +1, strTemp.length());
+//	System.out.println(str);
+} 
 
 	// Returns true if the two given strings are anagrams, false otherwise.
 	public static boolean isAnagram(String str1, String str2) {
@@ -36,21 +40,24 @@ public class Anagram {
 		str1= str1.replaceAll("\\s", "");
         str2 = preProcess(str2);
 		str2= str2.replaceAll("\\s", "");
+		String strTemp ="";
+
 
 		if(str1.length() != str2.length())
 		return false;
 
 		for(int i=0 ; i< str1.length() ; i++){
 			for(int j=0 ; j< str2.length() ; j++){
-				if(str1.charAt(i) == str2.charAt(j) ){
-					str2 = str2.replace(str2.charAt(j), ' ');
+			if(str1.charAt(i) == str2.charAt(j) ){
 
-					str2 = str2.replaceAll("\\s", "");
+		    strTemp = str2;
+			str2 = strTemp.substring(0,j) + strTemp.substring(j +1, strTemp.length());
+			System.out.println(str2);
 				}
 		}
 	}
 
-	if(str2 == "")
+	    if(str2.equals(""))
 		return true;
 
 		return false;
@@ -77,6 +84,7 @@ public class Anagram {
 		String randomStr ="";
 		int length = str.length();
 		int random= 0;
+		String strTemp =str;
 
 		if(str.length() ==0)
 		return "";
@@ -85,9 +93,9 @@ public class Anagram {
 			random =(int) (Math.random() * (str.length()));
 
 			if(str != ""){
+			strTemp = str;
 			randomStr = randomStr + str.charAt(random);
-			str = str.replace(str.charAt(random), ' ');
-			str = str.replaceAll("\\s", "");
+			str = strTemp.substring(0,random) + strTemp.substring(random +1, strTemp.length());
 			}
 		
 		}
